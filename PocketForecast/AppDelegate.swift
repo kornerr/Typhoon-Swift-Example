@@ -32,15 +32,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = self.rootViewController
-        self.window?.makeKeyAndVisible()
-        
+
+        // Set empty VC.
+        self.window?.rootViewController = UIViewController()
+
         /*
+        self.window?.rootViewController = self.rootViewController
+        
         let selectedCity : String! = cityDao!.loadSelectedCity()
         if selectedCity == nil {
             rootViewController?.showCitiesListController()
         }
         */
+
+        self.window?.makeKeyAndVisible()
                 
         return true
     }
