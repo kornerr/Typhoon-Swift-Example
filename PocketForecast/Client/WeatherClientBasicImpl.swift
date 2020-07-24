@@ -27,6 +27,7 @@ public class WeatherClientBasicImpl: NSObject, WeatherClient {
     public func loadWeatherReportFor(city: String!, onSuccess successBlock: @escaping ((WeatherReport) -> Void), onError errorBlock: @escaping ((String) -> Void)) {
 
 
+        /*
         DispatchQueue.global(priority: .high).async() {
             let url = self.queryURL(city: city)
             let data : Data! = try! Data(contentsOf: url)
@@ -47,6 +48,40 @@ public class WeatherClientBasicImpl: NSObject, WeatherClient {
                 }
             }
         }
+        */
+
+        let nsnow = NSDate()
+        let now = Date()
+        let temperature = Temperature(celciusString: "33 C")
+
+        let conditions =
+            CurrentConditions(
+                summary: "Солнечно",
+                temperature: temperature,
+                humidity: "77",
+                wind: "ЮЗ",
+                imageUri: "https://www.nastol.com.ua/pic/201406/2560x1440/nastol.com.ua-101323.jpg"
+            )
+
+        let forecast =
+            ForecastConditions(
+                date: now,
+                low: nil,
+                high: nil,
+                summary: "Будущее интересно",
+                imageUri: "http://ftp.habermark.com/upload/fotograf/cache/520x500/fotograf_c26dd6ade609362d4d0e8c2552b70e42ecb72cfa.jpg"
+            )
+        let forecasts = [forecast]
+
+        let weatherReport =
+            WeatherReport(
+                city: city,
+                date: nsnow,
+                currentConditions: conditions,
+                forecast: forecasts
+            )
+        self.weatherReportDao!.saveReport(weatherReport: weatherReport)
+        successBlock(weatherReport)
     }
 
 

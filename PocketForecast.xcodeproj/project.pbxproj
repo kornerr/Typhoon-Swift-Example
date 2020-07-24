@@ -580,8 +580,6 @@
 				6BD511651880E794009C487A /* Sources */,
 				6BD511661880E794009C487A /* Frameworks */,
 				6BD511671880E794009C487A /* Resources */,
-				FB9F9815013F069ED0E750C2 /* [CP] Embed Pods Frameworks */,
-				5E3CF946B18BCEBE75001F00 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -601,7 +599,6 @@
 				6BE9744B15AF01A3004472E2 /* Sources */,
 				6BE9744C15AF01A3004472E2 /* Frameworks */,
 				6BE9744D15AF01A3004472E2 /* Resources */,
-				442C17CD2F2921EB28BD313F /* [CP] Embed Pods Frameworks */,
 				6F59B57586C9930E085AE16C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -751,43 +748,13 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		442C17CD2F2921EB28BD313F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecast/Pods-PocketForecast-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5E3CF946B18BCEBE75001F00 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecastTests/Pods-PocketForecastTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6F59B57586C9930E085AE16C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecast/Pods-PocketForecast-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PocketForecast/Pods-PocketForecast-resources.sh",
 				"${PODS_ROOT}/PaperFold/PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_left.png",
 				"${PODS_ROOT}/PaperFold/PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_left@2x.png",
 				"${PODS_ROOT}/PaperFold/PaperFold/PaperFold/PaperFold/PaperFoldResources.bundle/swipe_guide_right.png",
@@ -795,26 +762,14 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/swipe_guide_left.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/swipe_guide_left@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/swipe_guide_right.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/swipe_guide_right@2x.png",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecast/Pods-PocketForecast-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FB9F9815013F069ED0E750C2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketForecastTests/Pods-PocketForecastTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PocketForecast/Pods-PocketForecast-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -113,9 +113,9 @@ public class RootViewController : UIViewController, PaperFoldViewDelegate {
 
     public func toggleSideViewController() {
         switch self.sideViewState {
-        case .hidden:
+        case .hidden?:
             self.showCitiesListController()
-        case .showing:
+        case .showing?:
             self.dismissCitiesListController()
         default:
             break
