@@ -19,7 +19,7 @@ public class CitiesListViewController : UIViewController, UITableViewDelegate, U
     //Typhoon injected properties
     var cityDao : CityDao!
     public var theme : Theme!
-    private var assembly : ApplicationAssembly!
+    var assembly : ApplicationAssembly!
     
     
     //Interface Builder injected properties

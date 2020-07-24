@@ -26,7 +26,7 @@ public class WeatherReportViewController: UIViewController {
     public private(set) var weatherClient : WeatherClient
     public private(set) var weatherReportDao : WeatherReportDao
     public private(set) var cityDao : CityDao
-    //public private(set) var assembly : ApplicationAssembly
+    public private(set) var assembly : ApplicationAssembly
     
     private var cityName : String?
     private var weatherReport : WeatherReport?
@@ -36,12 +36,12 @@ public class WeatherReportViewController: UIViewController {
     // MARK: - Initialization & Destruction
     //-------------------------------------------------------------------------------------------
     
-    public dynamic init(view: WeatherReportView, weatherClient : WeatherClient, weatherReportDao : WeatherReportDao, cityDao : CityDao/*, assembly : ApplicationAssembly*/) {
+    public init(view: WeatherReportView, weatherClient : WeatherClient, weatherReportDao : WeatherReportDao, cityDao : CityDao, assembly : ApplicationAssembly) {
         
         self.weatherClient = weatherClient
         self.weatherReportDao = weatherReportDao
         self.cityDao = cityDao
-        //self.assembly = assembly
+        self.assembly = assembly
             
         super.init(nibName: nil, bundle: nil)
         
@@ -126,11 +126,8 @@ public class WeatherReportViewController: UIViewController {
     }
     
     private dynamic func presentMenu() {
-        NSLog("TODO implement WeatherReportViewController.presentMenu")
-        /*
         let rootViewController = self.assembly.rootViewController() as! RootViewController
         rootViewController.toggleSideViewController()
-        */
     }
 
    

@@ -1,9 +1,9 @@
 
-typealias ApplicationAssembly = World
-typealias ThemeAssembly = World
-typealias CoreComponents = World
+public typealias ApplicationAssembly = World
+public typealias ThemeAssembly = World
+public typealias CoreComponents = World
 
-class World {
+public class World {
 
     // // // //
     // ApplicationAssembly.
@@ -17,8 +17,8 @@ class World {
         }
         rootVC =
             RootViewController(
-                mainContentViewController: weatherReportController()
-                //,assembly: self
+                mainContentViewController: weatherReportController(),
+                assembly: self
             )
         return rootVC!
     }
@@ -29,8 +29,8 @@ class World {
                 view: weatherReportView(),
                 weatherClient: weatherClient(),
                 weatherReportDao: weatherReportDao(),
-                cityDao: cityDao()
-                //,assembly: self
+                cityDao: cityDao(),
+                assembly: self
             )
     }
 
@@ -38,6 +38,21 @@ class World {
         let view = WeatherReportView()
         view.theme = currentTheme()
         return view
+    }
+
+    func citiesListController() -> CitiesListViewController {
+        let vc = CitiesListViewController(cityDao: cityDao(), theme: currentTheme())
+        vc.assembly = self
+        return vc
+    }
+
+    func addCityViewController() -> AddCityViewController {
+        let vc = AddCityViewController(nibName: "AddCity", bundle: Bundle.main)
+        vc.cityDao = cityDao()
+        vc.weatherClient = weatherClient()
+        vc.theme = currentTheme()
+        vc.rootViewController = rootViewController()
+        return vc
     }
 
     // // // //
