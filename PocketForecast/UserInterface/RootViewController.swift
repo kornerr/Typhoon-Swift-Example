@@ -24,7 +24,7 @@ public class RootViewController : UIViewController, PaperFoldViewDelegate {
     private var navigator : UINavigationController!
     private var mainContentViewContainer : UIView!
     private var sideViewState : SideViewState!
-    private var assembly : ApplicationAssembly!
+    //private var assembly : ApplicationAssembly!
     
     private var paperFoldView : PaperFoldView {
         get {
@@ -43,10 +43,10 @@ public class RootViewController : UIViewController, PaperFoldViewDelegate {
     // MARK: - Initialization & Destruction
     //-------------------------------------------------------------------------------------------
     
-    public init(mainContentViewController : UIViewController, assembly : ApplicationAssembly) {
+    public init(mainContentViewController : UIViewController/*, assembly : ApplicationAssembly*/) {
         super.init(nibName : nil, bundle : nil)
         
-        self.assembly = assembly
+        //self.assembly = assembly
         self.sideViewState = .hidden
         self.pushViewController(controller: mainContentViewController, replaceRoot: true)
     }
@@ -90,6 +90,8 @@ public class RootViewController : UIViewController, PaperFoldViewDelegate {
     }
     
     public func showCitiesListController() {
+        NSLog("TODO implement RootViewController.showCitiesListController")
+        /*
         if self.sideViewState != .showing {
             self.sideViewState = .showing
             self.citiesListController = UINavigationController(rootViewController: self.assembly.citiesListController() as! UIViewController)
@@ -101,6 +103,7 @@ public class RootViewController : UIViewController, PaperFoldViewDelegate {
             self.paperFoldView.setPaperFoldState(PaperFoldStateLeftUnfolded)
             self.mainContentViewContainer.setNeedsDisplay()
         }
+        */
     }
     
     public func dismissCitiesListController() {
@@ -123,6 +126,8 @@ public class RootViewController : UIViewController, PaperFoldViewDelegate {
     }
     
     public func showAddCitiesController() {
+        NSLog("TODO implement RootViewController.showAddCitiesController")
+        /*
         if self.addCitiesController == nil {
             self.navigator.topViewController!.view.isUserInteractionEnabled = false
             
@@ -137,6 +142,7 @@ public class RootViewController : UIViewController, PaperFoldViewDelegate {
                 
             }, completion: nil)
         }
+        */
     }
     
     public func dismissAddCitiesController() {
