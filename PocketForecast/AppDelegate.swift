@@ -14,6 +14,8 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var world = World()
     
     var window: UIWindow?
     var cityDao: CityDao?
@@ -32,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
+
+        /*
 
         // Set empty VC.
         self.window?.rootViewController = UIViewController()
@@ -95,7 +99,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 mainContentViewController: weatherReportViewController
             )
 
+        */
 
+        self.rootViewController = world.rootViewController()
 
         self.window?.rootViewController = self.rootViewController
 
