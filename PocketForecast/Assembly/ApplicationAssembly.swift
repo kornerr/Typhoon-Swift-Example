@@ -52,6 +52,7 @@ public class ApplicationAssembly: TyphoonAssembly {
     //-------------------------------------------------------------------------------------------
 
     public dynamic func rootViewController() -> AnyObject {
+        NSLog("ApplicationAssembly.rootVC()")
         return TyphoonDefinition.withClass(RootViewController.self) {
             definition in
 

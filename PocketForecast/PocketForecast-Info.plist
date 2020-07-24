@@ -41,12 +41,6 @@
     <false/>
     <key>UIStatusBarStyle</key>
     <string>UIStatusBarStyleLightContent</string>
-    <key>TyphoonInitialAssemblies</key>
-    <array>
-        <string>ApplicationAssembly</string>
-        <string>CoreComponents</string>
-        <string>ThemeAssembly</string>
-    </array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

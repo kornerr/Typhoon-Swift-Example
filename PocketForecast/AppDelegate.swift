@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
+        NSLog("application didFinishLaunching")
         ICLoader.setImageName("cloud_icon.png")
         ICLoader.setLabelFontName(UIFont.applicationFontOfSize(size: 10).fontName)
         
@@ -34,11 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = self.rootViewController
         self.window?.makeKeyAndVisible()
         
+        /*
         let selectedCity : String! = cityDao!.loadSelectedCity()
         if selectedCity == nil {
             rootViewController?.showCitiesListController()
         }
-        
+        */
                 
         return true
     }
